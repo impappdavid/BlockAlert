@@ -3,7 +3,10 @@ import dotenv from 'dotenv';
 import fetch from 'node-fetch';
 import Moralis from 'moralis';
 
-const renderAppUrl = 'https://blockalert.onrender.com/';
+const port = process.env.PORT || 3000;
+
+
+
 
 dotenv.config();
 
