@@ -1,6 +1,4 @@
 import { Client, GatewayIntentBits, REST, Routes, ModalBuilder, TextInputBuilder, TextInputStyle, ActionRowBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle } from 'discord.js';
-import sqlite3 from 'sqlite3';
-import { open } from 'sqlite';
 import dotenv from 'dotenv';
 import fetch from 'node-fetch';
 import Moralis from 'moralis';
@@ -15,11 +13,7 @@ const PREFIX = '/';
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
 
-let db;
-(async () => {
-    db = await open({ filename: 'alerts.db', driver: sqlite3.Database });
-    await db.run("CREATE TABLE IF NOT EXISTS alerts (id INTEGER PRIMARY KEY, userId TEXT, crypto TEXT, address TEXT, priceAlert REAL)");
-})();
+
 
 client.once('ready', async () => {
     console.log(`Logged in as ${client.user.tag}`);
