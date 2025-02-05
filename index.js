@@ -2,6 +2,9 @@ import { Client, GatewayIntentBits, REST, Routes, ModalBuilder, TextInputBuilder
 import dotenv from 'dotenv';
 import fetch from 'node-fetch';
 import Moralis from 'moralis';
+const axios = require('axios');
+
+const renderAppUrl = 'https://blockalert.onrender.com/';
 
 dotenv.config();
 
@@ -205,5 +208,21 @@ async function getTokenPrice(tokenAddress) {
     }
 }
 
+function pingRenderApp() {
+    axios
+      .get(renderAppUrl)
+      .then((response) => {
+        console.log('Ping sent successfully:', response.data);
+      })
+      .catch((error) => {
+        console.error('Error sending ping:', error.message);
+      });
+  }
+  
+  // Send the first ping immediately
+  pingRenderApp();
+  
+  // Set an interval to send a ping every 10 minutes (600,000 milliseconds)
+  setInterval(pingRenderApp, 600000);
 
 client.login(TOKEN);
