@@ -31,7 +31,7 @@ client.once('ready', async () => {
 });
 
 async function registerCommands() {
-    const commands = [{ name: 'check', description: 'Check price by address' }];
+    const commands = [{ name: 'check', description: 'Check price by address' },{name: 'alert', description: 'When the price close to target i will send a message'}];
     const rest = new REST({ version: '10' }).setToken(TOKEN);
     await rest.put(Routes.applicationCommands(CLIENT_ID), { body: commands });
     console.log('Slash command registered.');
