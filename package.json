@@ -1,0 +1,25 @@
+{
+  "name": "blockalert",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ."
+  },
+  "keywords": [],
+  "author": "Davee",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@discordjs/rest": "^2.4.2",
+    "@moralisweb3/common-evm-utils": "^2.27.2",
+    "axios": "^1.7.9",
+    "chalk": "^4.1.2",
+    "discord-api-types": "^0.37.119",
+    "discord.js": "^14.17.3",
+    "dotenv": "^16.4.7",
+    "moralis": "^2.27.2",
+    "node-fetch": "^3.3.2",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
+  }
+}
