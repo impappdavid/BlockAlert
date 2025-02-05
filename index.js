@@ -3,8 +3,14 @@ import dotenv from 'dotenv';
 import fetch from 'node-fetch';
 import Moralis from 'moralis';
 
-const port = process.env.PORT || 3000;
 
+import express from "express";
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
 
 
